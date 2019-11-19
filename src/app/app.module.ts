@@ -15,6 +15,7 @@ import { CajaComponent } from './caja/caja.component';
     RouterModule.forRoot([
       { path: 'retiro', component: ProductListComponent },
       { path: 'caja', component: CajaComponent },
+      { path: '', component: AppComponent}
     ])
   ],
   declarations: [

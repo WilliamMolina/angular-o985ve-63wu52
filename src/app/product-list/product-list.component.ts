@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { products } from '../products';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -8,10 +7,13 @@ import { products } from '../products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  products = products;
+  code: string;
+  constructor(private route: ActivatedRoute) { }
 
-  share() {
-    window.alert('The product has been shared!');
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      console.log(params)
+    });
   }
 }
 
